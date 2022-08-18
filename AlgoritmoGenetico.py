@@ -10,7 +10,7 @@ class AlgoritmoGenetico:
 
     def __init__(
             self, 
-            qtd_populacao : int = 5, 
+            qtd_geracoes : int = 5, 
             qtd_individuos : int = 4,
             menor : int = -10,
             maior : int = 10,
@@ -20,8 +20,8 @@ class AlgoritmoGenetico:
             random_seed : int = None
         ) -> None:
         ## Valores de configuração
-        self._qtd_populacao = qtd_populacao
-        self._qtd_individuos = qtd_individuos
+        self._qtd_geracoes = qtd_geracoes
+        self._qtd_individuos = qtd_individuos if qtd_individuos%2 == 0 else qtd_individuos + 1 ## Verificação e certificação que sempre haja uma quantidade par de individuos a serem criados 
         self._menor = menor
         self._maior = maior
         self._porct_crossover = porct_crossover
@@ -30,6 +30,13 @@ class AlgoritmoGenetico:
         random.seed(random_seed)
         #################################
 
+    def set_qtd_individuos(self, qtd_individuos): ## Metodo para setar a quantidade de individuos presentes nas gerações
+        self._qtd_individuos = qtd_individuos
+
+    def set_qtd_geracoes(self, qtd_geracoes): ## Metodo para setar a quantidade de gerações
+        self._qtd_geracoes = qtd_geracoes
+
+    @property
     def _cria_individuo(self) -> individuo: ## Cria um individuo, que terá um valor entre os parametros menor e maior, essa valor será em binário.
         size_individuo = len(format(max(abs(self._menor), abs(self._maior)), "b")) + 1 ## pega a quantidade de bits necessária para representa o maior valor, +1 do bit de negativo ou positivo
         valor_int = random.randint(self._menor, self._maior) ## Escolhe um valor entre os limites inferiores (menor) e superior (maior)
@@ -97,15 +104,16 @@ class AlgoritmoGenetico:
         lista_individuos[posicao_individuo] = aux_individuo if self._verifica_valor(aux_individuo) else lista_individuos[posicao_individuo]
         return lista_individuos
 
+    @property
     def start(self) -> float:
         inicio = time.time()
         lista_individuos = [] ## Lista de individuos na geração
-        for geracao in range(self._qtd_populacao):
+        for geracao in range(self._qtd_geracoes):
             if not lista_individuos: ## Cria os individuos, caso não existam
                 for i in range(self._qtd_individuos):
-                    lista_individuos.append(self._cria_individuo()) ## Cria os individuos
+                    lista_individuos.append(self._cria_individuo) ## Cria os individuos
             novos_individuos = []
-            while len(novos_individuos) < self._qtd_individuos: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
+            for i in range(int(self._qtd_individuos/2)): ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
                 escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
                 escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
                 novos_individuos += self._crossover(escolha_1, escolha_2) ## Realiza o crossover
