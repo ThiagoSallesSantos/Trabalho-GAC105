@@ -104,19 +104,49 @@ class AlgoritmoGenetico:
         lista_individuos[posicao_individuo] = aux_individuo if self._verifica_valor(aux_individuo) else lista_individuos[posicao_individuo]
         return lista_individuos
 
+    def _cria_filho(self, lista_individuos : List[individuo]) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
+        escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
+        escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
+        return self._crossover(escolha_1, escolha_2) ## Realiza o crossover
+
     @property
     def start(self) -> float:
         inicio = time.time()
-        lista_individuos = [] ## Lista de individuos na geração
+        lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
         for geracao in range(self._qtd_geracoes):
-            if not lista_individuos: ## Cria os individuos, caso não existam
-                for i in range(self._qtd_individuos):
-                    lista_individuos.append(self._cria_individuo) ## Cria os individuos
             novos_individuos = []
-            for i in range(int(self._qtd_individuos/2)): ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
-                escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
-                escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
-                novos_individuos += self._crossover(escolha_1, escolha_2) ## Realiza o crossover
+            for i in range(int(self._qtd_individuos/2)): ## Gera os x filhos
+                novos_individuos += self._cria_filho(lista_individuos)
+            lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
+        fim = time.time()
+        return fim - inicio
+        
+## Classe AlgoritmoGeneticoParalelo, herda de AlgoritmoGenetico e implementa o paralelismo
+class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
+
+    def __init__(
+            self, 
+            qtd_geracoes : int = 5, 
+            qtd_individuos : int = 4,
+            menor : int = -10,
+            maior : int = 10,
+            porct_crossover : float = 0.7,
+            porct_mutacao : float = 0.01,
+            qtd_elementos_roleta : int = 10, ## Configuração adicional para definir a quantidade de elementos na roleta
+            random_seed : int = None,
+            qtd_threads : int = 2
+        ) -> None:
+        AlgoritmoGenetico.__init__(self, qtd_geracoes, qtd_individuos, menor, maior, porct_crossover, porct_mutacao, qtd_elementos_roleta, random_seed)
+        self._qtd_threads = qtd_threads
+
+    @property
+    def start(self) -> float:
+        inicio = time.time()
+        lista_threads = [None for x in range(self._qtd_threads)]
+        lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
+        for geracao in range(self._qtd_geracoes):
+            novos_individuos = []
+            ### TODO: criação de filhos usando threads
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time()
         return fim - inicio
