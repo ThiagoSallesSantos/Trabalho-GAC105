@@ -1,3 +1,4 @@
+from ThreadReturn import ThreadReturn
 from typing import List, Tuple
 import random
 import math
@@ -110,7 +111,7 @@ class AlgoritmoGenetico:
         return self._crossover(escolha_1, escolha_2) ## Realiza o crossover
 
     @property
-    def start(self) -> float:
+    def start(self) -> Tuple[List[individuo], float]:
         inicio = time.time()
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
         for geracao in range(self._qtd_geracoes):
@@ -119,7 +120,7 @@ class AlgoritmoGenetico:
                 novos_individuos += self._cria_filho(lista_individuos)
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time()
-        return fim - inicio
+        return lista_individuos, fim - inicio
         
 ## Classe AlgoritmoGeneticoParalelo, herda de AlgoritmoGenetico e implementa o paralelismo
 class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
@@ -139,14 +140,22 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
         AlgoritmoGenetico.__init__(self, qtd_geracoes, qtd_individuos, menor, maior, porct_crossover, porct_mutacao, qtd_elementos_roleta, random_seed)
         self._qtd_threads = qtd_threads
 
+    def set_qtd_threads(self, qtd_threads : int) -> None:
+        self._qtd_threads = qtd_threads
+
     @property
-    def start(self) -> float:
+    def start(self) -> Tuple[List[individuo], float]:
         inicio = time.time()
-        lista_threads = [None for x in range(self._qtd_threads)]
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
+        lista_threads = [None for x in range(self._qtd_threads)]
         for geracao in range(self._qtd_geracoes):
             novos_individuos = []
-            ### TODO: criação de filhos usando threads
+            while len(novos_individuos) < self._qtd_individuos:
+                for index_thread in range(self._qtd_threads):
+                    lista_threads[index_thread] = ThreadReturn(target=self._cria_filho, args=(lista_individuos,))
+                    lista_threads[index_thread].start()
+                for index_thread in range(self._qtd_threads):
+                    novos_individuos += lista_threads[index_thread].join()
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time()
-        return fim - inicio
+        return lista_individuos, fim - inicio
