@@ -4,89 +4,111 @@
         "resultado": [
             {
                 "individuos": 50,
-                "resultado_sequencial": 0.05287046432495117,
+                "resultado_sequencial": 0.01818814277648926,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.08721356391906739
+                        "resultado": 0.09540717601776123
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.08853001594543457
+                        "resultado": 0.05271930694580078
                     },
                     {
                         "threads": 6,
-                        "resultado": 0.0907325029373169
+                        "resultado": 0.044101619720458986
                     },
                     {
                         "threads": 8,
-                        "resultado": 0.10999574661254882
+                        "resultado": 0.04326791763305664
                     }
                 ]
             },
             {
                 "individuos": 100,
-                "resultado_sequencial": 0.1896160364151001,
+                "resultado_sequencial": 0.03015916347503662,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.26167075634002684
+                        "resultado": 0.07829141616821289
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.30942933559417723
+                        "resultado": 0.11433300971984864
                     },
                     {
                         "threads": 6,
-                        "resultado": 0.2586794853210449
+                        "resultado": 0.0852536678314209
                     },
                     {
                         "threads": 8,
-                        "resultado": 0.27464070320129397
+                        "resultado": 0.0874631404876709
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 1.0256121158599854,
+                "resultado_sequencial": 0.1441883087158203,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 1.2031938552856445
+                        "resultado": 0.31249499320983887
                     },
                     {
                         "threads": 4,
-                        "resultado": 1.238597583770752
+                        "resultado": 0.35045979022979734
                     },
                     {
                         "threads": 6,
-                        "resultado": 1.211282229423523
+                        "resultado": 0.4170164823532104
                     },
                     {
                         "threads": 8,
-                        "resultado": 1.2397781133651733
+                        "resultado": 0.3203706979751587
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 4.342995929718017,
+                "resultado_sequencial": 0.53815758228302,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 4.906721138954163
+                        "resultado": 0.966948413848877
                     },
                     {
                         "threads": 4,
-                        "resultado": 4.980987095832825
+                        "resultado": 0.9574973583221436
                     },
                     {
                         "threads": 6,
-                        "resultado": 5.036246967315674
+                        "resultado": 0.9757910013198853
                     },
                     {
                         "threads": 8,
-                        "resultado": 5.08535258769989
+                        "resultado": 0.983528733253479
+                    }
+                ]
+            },
+            {
+                "individuos": 600,
+                "resultado_sequencial": 0.8566595792770386,
+                "resultado_paralelo": [
+                    {
+                        "threads": 2,
+                        "resultado": 1.2949887275695802
+                    },
+                    {
+                        "threads": 4,
+                        "resultado": 1.2989698648452759
+                    },
+                    {
+                        "threads": 6,
+                        "resultado": 1.4211169719696044
+                    },
+                    {
+                        "threads": 8,
+                        "resultado": 1.4944291830062866
                     }
                 ]
             }
@@ -97,89 +119,111 @@
         "resultado": [
             {
                 "individuos": 50,
-                "resultado_sequencial": 0.0871617317199707,
+                "resultado_sequencial": 0.021107959747314452,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.14600625038146972
+                        "resultado": 0.11359188556671143
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.16553428173065185
+                        "resultado": 0.0860445499420166
                     },
                     {
                         "threads": 6,
-                        "resultado": 0.1792997360229492
+                        "resultado": 0.13108317852020263
                     },
                     {
                         "threads": 8,
-                        "resultado": 0.20483813285827637
+                        "resultado": 0.10167896747589111
                     }
                 ]
             },
             {
                 "individuos": 100,
-                "resultado_sequencial": 0.3123560190200806,
+                "resultado_sequencial": 0.06496350765228272,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.44916226863861086
+                        "resultado": 0.1767275333404541
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.47455415725708006
+                        "resultado": 0.21157612800598144
                     },
                     {
                         "threads": 6,
-                        "resultado": 0.5184017896652222
+                        "resultado": 0.18764073848724366
                     },
                     {
                         "threads": 8,
-                        "resultado": 0.5378543138504028
+                        "resultado": 0.18196778297424315
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 1.9826982259750365,
+                "resultado_sequencial": 0.29631290435791013,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 2.3492050409317016
+                        "resultado": 0.7254047632217407
                     },
                     {
                         "threads": 4,
-                        "resultado": 2.420845055580139
+                        "resultado": 0.6990745067596436
                     },
                     {
                         "threads": 6,
-                        "resultado": 2.333134984970093
+                        "resultado": 0.6513978481292725
                     },
                     {
                         "threads": 8,
-                        "resultado": 2.397199773788452
+                        "resultado": 0.6562526226043701
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 8.520802450180053,
+                "resultado_sequencial": 1.1974543333053589,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 9.46541805267334
+                        "resultado": 1.9542448759078979
                     },
                     {
                         "threads": 4,
-                        "resultado": 9.510942840576172
+                        "resultado": 1.97617449760437
                     },
                     {
                         "threads": 6,
-                        "resultado": 9.604104042053223
+                        "resultado": 1.9780493021011352
                     },
                     {
                         "threads": 8,
-                        "resultado": 9.806094145774841
+                        "resultado": 2.0183925867080688
+                    }
+                ]
+            },
+            {
+                "individuos": 600,
+                "resultado_sequencial": 1.582699966430664,
+                "resultado_paralelo": [
+                    {
+                        "threads": 2,
+                        "resultado": 2.6927467346191407
+                    },
+                    {
+                        "threads": 4,
+                        "resultado": 2.765686821937561
+                    },
+                    {
+                        "threads": 6,
+                        "resultado": 2.64225435256958
+                    },
+                    {
+                        "threads": 8,
+                        "resultado": 2.6891924858093263
                     }
                 ]
             }
@@ -190,89 +234,111 @@
         "resultado": [
             {
                 "individuos": 50,
-                "resultado_sequencial": 0.20094773769378663,
+                "resultado_sequencial": 0.046012473106384275,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.3655419826507568
+                        "resultado": 0.16516585350036622
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.410614013671875
+                        "resultado": 0.17865979671478271
                     },
                     {
                         "threads": 6,
-                        "resultado": 0.47043862342834475
+                        "resultado": 0.19316411018371582
                     },
                     {
                         "threads": 8,
-                        "resultado": 0.5107517004013061
+                        "resultado": 0.22249813079833985
                     }
                 ]
             },
             {
                 "individuos": 100,
-                "resultado_sequencial": 0.783291244506836,
+                "resultado_sequencial": 0.15585815906524658,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 1.1221046447753906
+                        "resultado": 0.3963316917419434
                     },
                     {
                         "threads": 4,
-                        "resultado": 1.2061367511749268
+                        "resultado": 0.42175564765930174
                     },
                     {
                         "threads": 6,
-                        "resultado": 1.2916405916213989
+                        "resultado": 0.4413740158081055
                     },
                     {
                         "threads": 8,
-                        "resultado": 1.3543949127197266
+                        "resultado": 0.4616308450698853
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 5.347650790214539,
+                "resultado_sequencial": 0.7437976837158203,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 7.599397897720337
+                        "resultado": 1.6090805530548096
                     },
                     {
                         "threads": 4,
-                        "resultado": 9.117162251472473
+                        "resultado": 1.6900033235549927
                     },
                     {
                         "threads": 6,
-                        "resultado": 9.715032291412353
+                        "resultado": 1.6863677024841308
                     },
                     {
                         "threads": 8,
-                        "resultado": 9.770849299430846
+                        "resultado": 1.638267993927002
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 29.575907135009764,
+                "resultado_sequencial": 3.1598161697387694,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 23.356917786598206
+                        "resultado": 9.364940094947816
                     },
                     {
                         "threads": 4,
-                        "resultado": 23.23283393383026
+                        "resultado": 13.304445004463195
                     },
                     {
                         "threads": 6,
-                        "resultado": 23.12278151512146
+                        "resultado": 8.5506187915802
                     },
                     {
                         "threads": 8,
-                        "resultado": 24.166010427474976
+                        "resultado": 9.054284143447877
+                    }
+                ]
+            },
+            {
+                "individuos": 600,
+                "resultado_sequencial": 7.064948058128357,
+                "resultado_paralelo": [
+                    {
+                        "threads": 2,
+                        "resultado": 10.109785747528075
+                    },
+                    {
+                        "threads": 4,
+                        "resultado": 12.912245869636536
+                    },
+                    {
+                        "threads": 6,
+                        "resultado": 10.87351381778717
+                    },
+                    {
+                        "threads": 8,
+                        "resultado": 9.308236932754516
                     }
                 ]
             }
@@ -283,89 +349,111 @@
         "resultado": [
             {
                 "individuos": 50,
-                "resultado_sequencial": 0.4774335861206055,
+                "resultado_sequencial": 0.10750756263732911,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 0.7936299324035645
+                        "resultado": 0.4406460762023926
                     },
                     {
                         "threads": 4,
-                        "resultado": 0.9461658477783204
+                        "resultado": 0.49126031398773196
                     },
                     {
                         "threads": 6,
-                        "resultado": 2.715875840187073
+                        "resultado": 0.5629763841629029
                     },
                     {
                         "threads": 8,
-                        "resultado": 3.157807207107544
+                        "resultado": 0.7164803266525268
                     }
                 ]
             },
             {
                 "individuos": 100,
-                "resultado_sequencial": 2.8306609630584716,
+                "resultado_sequencial": 0.5591341972351074,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 3.0122019052505493
+                        "resultado": 1.1396533489227294
                     },
                     {
                         "threads": 4,
-                        "resultado": 2.4983165502548217
+                        "resultado": 1.1498305797576904
                     },
                     {
                         "threads": 6,
-                        "resultado": 3.0554559946060182
+                        "resultado": 1.2596419334411622
                     },
                     {
                         "threads": 8,
-                        "resultado": 6.288833594322204
+                        "resultado": 1.2585726976394653
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 16.524025917053223,
+                "resultado_sequencial": 1.9864429235458374,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 12.107650065422058
+                        "resultado": 4.699165678024292
                     },
                     {
                         "threads": 4,
-                        "resultado": 12.34464089870453
+                        "resultado": 6.907840228080749
                     },
                     {
                         "threads": 6,
-                        "resultado": 11.875732469558717
+                        "resultado": 4.41692099571228
                     },
                     {
                         "threads": 8,
-                        "resultado": 12.211603355407714
+                        "resultado": 4.591566562652588
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 43.21153461933136,
+                "resultado_sequencial": 8.004233932495117,
                 "resultado_paralelo": [
                     {
                         "threads": 2,
-                        "resultado": 48.260657978057864
+                        "resultado": 14.56618959903717
                     },
                     {
                         "threads": 4,
-                        "resultado": 48.3207439661026
+                        "resultado": 16.60293653011322
                     },
                     {
                         "threads": 6,
-                        "resultado": 46.963495230674745
+                        "resultado": 13.409195756912231
                     },
                     {
                         "threads": 8,
-                        "resultado": 55.19060642719269
+                        "resultado": 13.76748342514038
+                    }
+                ]
+            },
+            {
+                "individuos": 600,
+                "resultado_sequencial": 8.027941036224366,
+                "resultado_paralelo": [
+                    {
+                        "threads": 2,
+                        "resultado": 13.275487327575684
+                    },
+                    {
+                        "threads": 4,
+                        "resultado": 15.80988438129425
+                    },
+                    {
+                        "threads": 6,
+                        "resultado": 18.33979458808899
+                    },
+                    {
+                        "threads": 8,
+                        "resultado": 19.773932003974913
                     }
                 ]
             }
