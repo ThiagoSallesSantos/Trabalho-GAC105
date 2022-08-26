@@ -6,6 +6,7 @@ import time
 
 ## Typagem
 individuo = List[str]
+individuo_processado = Tuple[individuo, int, int]
 
 class AlgoritmoGenetico:
 
@@ -52,12 +53,9 @@ class AlgoritmoGenetico:
     def _fitness(self, valor_int : int) -> int: ## Realiza a função fitness
         return (valor_int**2) - (3*valor_int) + 4
 
-    def _rodeio(self, lista_individuos : List[individuo]) -> individuo: ## Realiza o rodeio, escolhendo 2 individuos e devolvendo o melhor adaptado
-        lista_individuos_aux = [[x, self._fitness(self._convert_int(x))] for x in lista_individuos]
-        somatorio_fitness = sum(x[1] for x in lista_individuos_aux)
-        lista_individuos_aux = [[x[0], x[1], round((x[1]/somatorio_fitness) * self._qtd_individuos)] for x in lista_individuos_aux]
+    def _rodeio(self, lista_individuos : List[individuo_processado]) -> individuo: ## Realiza o rodeio, escolhendo 2 individuos e devolvendo o melhor adaptado
         roleta = []
-        for individuo in lista_individuos_aux: ## Cria uma roleta com base na porcentagem destinada a cada individuo, ou porção destinada da roleta ao individuo
+        for individuo in lista_individuos: ## Cria uma roleta com base na porcentagem destinada a cada individuo, ou porção destinada da roleta ao individuo
             for i in range(individuo[2]):
                 roleta.append(individuo[:2])
         escolha_1 = random.choice(roleta) ## Seleciona um individuo
@@ -113,6 +111,11 @@ class AlgoritmoGenetico:
         inicio = time.time()
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
         for geracao in range(self._qtd_geracoes):
+            somatorio_resultados = 0
+            for index, individuo in enumerate(lista_individuos): ## Realiza o fitness dos individuos da geração
+                lista_individuos[index] = (individuo, self._fitness(self._convert_int(individuo)))
+                somatorio_resultados += lista_individuos[index][1]
+            lista_individuos = [(individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)) for individuos in lista_individuos]
             novos_individuos = []
             for i in range(int(self._qtd_individuos/2)): ## Gera os x filhos
                 novos_individuos += self._cria_filho(lista_individuos)
@@ -146,6 +149,11 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
         lista_threads = [None for x in range(self._qtd_threads)]
         for geracao in range(self._qtd_geracoes):
+            somatorio_resultados = 0
+            for index, individuo in enumerate(lista_individuos): ## Realiza o fitness dos individuos da geração
+                lista_individuos[index] = [individuo, self._fitness(self._convert_int(individuo))]
+                somatorio_resultados += lista_individuos[index][1]
+            lista_individuos = [[individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)] for individuos in lista_individuos]
             novos_individuos = []
             while len(novos_individuos) < self._qtd_individuos:
                 for index_thread in range(self._qtd_threads):
