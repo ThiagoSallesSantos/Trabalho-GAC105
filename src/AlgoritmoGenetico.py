@@ -17,7 +17,6 @@ class AlgoritmoGenetico:
             maior : int = 10,
             porct_crossover : float = 0.7,
             porct_mutacao : float = 0.01,
-            qtd_elementos_roleta : int = 10, ## Configuração adicional para definir a quantidade de elementos na roleta
             random_seed : int = None
         ) -> None:
         ## Valores de configuração
@@ -27,7 +26,6 @@ class AlgoritmoGenetico:
         self._maior = maior
         self._porct_crossover = porct_crossover
         self._porct_mutacao = porct_mutacao
-        self._qtd_elementos_roleta = qtd_elementos_roleta 
         random.seed(random_seed)
         #################################
 
@@ -57,7 +55,7 @@ class AlgoritmoGenetico:
     def _rodeio(self, lista_individuos : List[individuo]) -> individuo: ## Realiza o rodeio, escolhendo 2 individuos e devolvendo o melhor adaptado
         lista_individuos_aux = [[x, self._fitness(self._convert_int(x))] for x in lista_individuos]
         somatorio_fitness = sum(x[1] for x in lista_individuos_aux)
-        lista_individuos_aux = [[x[0], x[1], round((x[1]/somatorio_fitness) * self._qtd_elementos_roleta)] for x in lista_individuos_aux]
+        lista_individuos_aux = [[x[0], x[1], round((x[1]/somatorio_fitness) * self._qtd_individuos)] for x in lista_individuos_aux]
         roleta = []
         for individuo in lista_individuos_aux: ## Cria uma roleta com base na porcentagem destinada a cada individuo, ou porção destinada da roleta ao individuo
             for i in range(individuo[2]):
@@ -133,11 +131,10 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
             maior : int = 10,
             porct_crossover : float = 0.7,
             porct_mutacao : float = 0.01,
-            qtd_elementos_roleta : int = 10, ## Configuração adicional para definir a quantidade de elementos na roleta
             random_seed : int = None,
             qtd_threads : int = 2
         ) -> None:
-        AlgoritmoGenetico.__init__(self, qtd_geracoes, qtd_individuos, menor, maior, porct_crossover, porct_mutacao, qtd_elementos_roleta, random_seed)
+        AlgoritmoGenetico.__init__(self, qtd_geracoes, qtd_individuos, menor, maior, porct_crossover, porct_mutacao, random_seed)
         self._qtd_threads = qtd_threads
 
     def set_qtd_threads(self, qtd_threads : int) -> None:
