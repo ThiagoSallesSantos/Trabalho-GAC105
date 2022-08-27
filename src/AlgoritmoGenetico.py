@@ -1,5 +1,5 @@
-from ThreadReturn import ThreadReturn
-from typing import List, Tuple
+from multiprocessing import Process, Manager
+from typing import List, Tuple, Dict
 import random
 import math
 import time
@@ -101,26 +101,28 @@ class AlgoritmoGenetico:
         lista_individuos[posicao_individuo] = aux_individuo if self._verifica_valor(aux_individuo) else lista_individuos[posicao_individuo]
         return lista_individuos
 
-    def _cria_filho(self, lista_individuos : List[individuo]) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
+    def _cria_filho(self, lista_individuos : List[individuo_processado], retorno_processo : Dict[int, List[individuo]], index : int = None) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
         escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
         escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
-        return self._crossover(escolha_1, escolha_2) ## Realiza o crossover
+        resultado = self._crossover(escolha_1, escolha_2) ## Realiza o crossover
+        retorno_processo[index] = resultado if retorno_processo is not None else ... ## Retorno para caso a chamada seja via processo em paralelo
+        return resultado
 
     @property
     def start(self) -> Tuple[List[individuo], float]:
-        inicio = time.time()
+        inicio = time.time() ## Pega o tempo inicial
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
-        for geracao in range(self._qtd_geracoes):
-            somatorio_resultados = 0
+        for geracao in range(self._qtd_geracoes): ## Percorre as gerações
+            somatorio_resultados = 0 ## Armazena os resultados do individuos na função fitness
             for index, individuo in enumerate(lista_individuos): ## Realiza o fitness dos individuos da geração
                 lista_individuos[index] = (individuo, self._fitness(self._convert_int(individuo)))
                 somatorio_resultados += lista_individuos[index][1]
-            lista_individuos = [(individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)) for individuos in lista_individuos]
-            novos_individuos = []
-            for i in range(int(self._qtd_individuos/2)): ## Gera os x filhos
-                novos_individuos += self._cria_filho(lista_individuos)
+            lista_individuos = [(individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)) for individuos in lista_individuos] ## Realiza um processamento estético no individuo, para facilitar no processamento
+            novos_individuos = [] ## Armazerna os novos individuos
+            while len(novos_individuos) < self._qtd_individuos: ## Gera os x filhos
+                novos_individuos += self._cria_filho(lista_individuos) ## Cria 2 filhos
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
-        fim = time.time()
+        fim = time.time() ## Pega o tempo final
         return lista_individuos, fim - inicio
         
 ## Classe AlgoritmoGeneticoParalelo, herda de AlgoritmoGenetico e implementa o paralelismo
@@ -135,32 +137,40 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
             porct_crossover : float = 0.7,
             porct_mutacao : float = 0.01,
             random_seed : int = None,
-            qtd_threads : int = 2
+            qtd_processos : int = 2
         ) -> None:
         AlgoritmoGenetico.__init__(self, qtd_geracoes, qtd_individuos, menor, maior, porct_crossover, porct_mutacao, random_seed)
-        self._qtd_threads = qtd_threads
+        self._qtd_processos = qtd_processos ## Quantidade de processo a ser criado
 
-    def set_qtd_threads(self, qtd_threads : int) -> None:
-        self._qtd_threads = qtd_threads
+    def set_qtd_processos(self, qtd_processos : int) -> None: ## Seta a quantidade de processos a serem utilizados no processamento do AGP
+        self._qtd_processos = qtd_processos
 
     @property
     def start(self) -> Tuple[List[individuo], float]:
-        inicio = time.time()
+        inicio = time.time() ## Pega o tempo inicial
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
-        lista_threads = [None for x in range(self._qtd_threads)]
-        for geracao in range(self._qtd_geracoes):
-            somatorio_resultados = 0
+        lista_processos = [None for x in range(self._qtd_processos)] ## Cria a lista que irá armazenar os processos
+        ## - IMPORTANTE -
+        ## Criação da váriavel compartilhavel entre os processos - Inicio
+        retorno_processos = Manager().dict() ## Cria a váriavel compartilhavel entre os processos
+        ############################## - Fim
+        for geracao in range(self._qtd_geracoes): ## Percorre as gerações
+            somatorio_resultados = 0 ## Armazena os resultados do individuos na função fitness
             for index, individuo in enumerate(lista_individuos): ## Realiza o fitness dos individuos da geração
                 lista_individuos[index] = [individuo, self._fitness(self._convert_int(individuo))]
                 somatorio_resultados += lista_individuos[index][1]
-            lista_individuos = [[individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)] for individuos in lista_individuos]
-            novos_individuos = []
-            while len(novos_individuos) < self._qtd_individuos:
-                for index_thread in range(self._qtd_threads):
-                    lista_threads[index_thread] = ThreadReturn(target=self._cria_filho, args=(lista_individuos,))
-                    lista_threads[index_thread].start()
-                for index_thread in range(self._qtd_threads):
-                    novos_individuos += lista_threads[index_thread].join()
+            lista_individuos = [[individuos[0], individuos[1], round((individuos[1]/somatorio_resultados) * self._qtd_individuos)] for individuos in lista_individuos] ## Realiza um processamento estético no individuo, para facilitar no processamento
+            novos_individuos = [] ## Armazerna os novos individuos
+            while len(novos_individuos) < self._qtd_individuos: ## Gera os x filhos
+                ## Realiza a criação dos filhos, utilizando de processos para execução paralela, cada processo irá cria dois filhos
+                ## Criação de processos - Inicio
+                for index_processo in range(self._qtd_processos): ## Cria os processos e os executa
+                    lista_processos[index_processo] = Process(target=self._cria_filho, args=(lista_individuos, retorno_processos, index_processo))
+                    lista_processos[index_processo].start()
+                for index_processo in range(self._qtd_processos): ## Espera os processos terminarem a execução, e obtém os resultados
+                    lista_processos[index_processo].join()
+                    novos_individuos += retorno_processos[index_processo]
+                ############################## - Fim 
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
-        fim = time.time()
+        fim = time.time() ## Pega o tempo final
         return lista_individuos, fim - inicio
