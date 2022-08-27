@@ -171,6 +171,7 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
                 for index_processo in range(self._qtd_processos): ## Espera os processos terminarem a execução, e obtém os resultados
                     lista_processos[index_processo].join()
                     novos_individuos += retorno_processos[index_processo]
+                    lista_processos[index_processo].close()
                 ############################## - Fim 
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time() ## Pega o tempo final
