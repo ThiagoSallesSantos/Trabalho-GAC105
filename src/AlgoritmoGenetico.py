@@ -102,11 +102,11 @@ class AlgoritmoGenetico:
         lista_individuos[posicao_individuo] = aux_individuo if self._verifica_valor(aux_individuo) else lista_individuos[posicao_individuo]
         return lista_individuos
 
-    def _cria_filho(self, lista_individuos : List[individuo_processado], retorno_processo : Dict[int, List[individuo]] = None, index : int = None) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
+    def _cria_filho(self, lista_individuos : List[individuo_processado], processo_paralelo : bool = False, retorno_processo : Dict[int, List[individuo]] = None, index : int = None) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
         escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
         escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
         resultado = self._crossover(escolha_1, escolha_2) ## Realiza o crossover
-        if index is not None:
+        if processo_paralelo: ## Verifica se trata de um processo paralelo
             retorno_processo[index] = resultado ## Retorno para caso a chamada seja via processo em paralelo
         return resultado
 
@@ -166,7 +166,7 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
                 ## Realiza a criação dos filhos, utilizando de processos para execução paralela, cada processo irá cria dois filhos
                 ## Criação de processos - Inicio
                 for index_processo in range(self._qtd_processos): ## Cria os processos e os executa
-                    lista_processos[index_processo] = Process(target=self._cria_filho, args=(lista_individuos, retorno_processos, index_processo))
+                    lista_processos[index_processo] = Process(target=self._cria_filho, args=(lista_individuos, True, retorno_processos, index_processo))
                     lista_processos[index_processo].start()
                 for index_processo in range(self._qtd_processos): ## Espera os processos terminarem a execução, e obtém os resultados
                     lista_processos[index_processo].join()

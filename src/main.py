@@ -7,5 +7,5 @@ if __name__ == "__main__":
     AG = AlgoritmoGenetico(qtd_gerecaos, qtd_individuos, random_seed=7)
     print("Tempo de execução sequencial: " + str(AG.start[1]))
     ## Algoritmo Genetico em Paralelo
-    AGP = AlgoritmoGeneticoParalelo(qtd_gerecaos, qtd_individuos, random_seed=7, qtd_processos=4)
+    AGP = AlgoritmoGeneticoParalelo(qtd_gerecaos, qtd_individuos, random_seed=7, qtd_processos=2)
     print("Tempo de execução paralelo: " + str(AGP.start[1]))
