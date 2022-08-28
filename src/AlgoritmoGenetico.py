@@ -170,6 +170,7 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
                 lista_processos[index_processo].join()
                 novos_individuos += retorno_processos[index_processo]
                 lista_processos[index_processo].close() ## Fecha o processo criado
+            novos_individuos = novos_individuos[:self._qtd_individuos] ## Para descartar a quantidade de individuos que foi gerado a mais, caso tenha sido gerado
             ############################## - Fim
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time() ## Pega o tempo final
