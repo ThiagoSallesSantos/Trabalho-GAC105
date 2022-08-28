@@ -1,344 +1,92 @@
 [
     {
-        "geracao": 5,
-        "resultado": [
-            {
-                "individuos": 50,
-                "resultado_sequencial": 0.01818814277648926,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.09540717601776123
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.05271930694580078
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.044101619720458986
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.04326791763305664
-                    }
-                ]
-            },
-            {
-                "individuos": 100,
-                "resultado_sequencial": 0.03015916347503662,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.07829141616821289
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.11433300971984864
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.0852536678314209
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.0874631404876709
-                    }
-                ]
-            },
-            {
-                "individuos": 250,
-                "resultado_sequencial": 0.1441883087158203,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.31249499320983887
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.35045979022979734
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.4170164823532104
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.3203706979751587
-                    }
-                ]
-            },
-            {
-                "individuos": 500,
-                "resultado_sequencial": 0.53815758228302,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.966948413848877
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.9574973583221436
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.9757910013198853
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.983528733253479
-                    }
-                ]
-            },
-            {
-                "individuos": 600,
-                "resultado_sequencial": 0.8566595792770386,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 1.2949887275695802
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 1.2989698648452759
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 1.4211169719696044
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 1.4944291830062866
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "geracao": 10,
-        "resultado": [
-            {
-                "individuos": 50,
-                "resultado_sequencial": 0.021107959747314452,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.11359188556671143
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.0860445499420166
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.13108317852020263
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.10167896747589111
-                    }
-                ]
-            },
-            {
-                "individuos": 100,
-                "resultado_sequencial": 0.06496350765228272,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.1767275333404541
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.21157612800598144
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.18764073848724366
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.18196778297424315
-                    }
-                ]
-            },
-            {
-                "individuos": 250,
-                "resultado_sequencial": 0.29631290435791013,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.7254047632217407
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.6990745067596436
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.6513978481292725
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.6562526226043701
-                    }
-                ]
-            },
-            {
-                "individuos": 500,
-                "resultado_sequencial": 1.1974543333053589,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 1.9542448759078979
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 1.97617449760437
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 1.9780493021011352
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 2.0183925867080688
-                    }
-                ]
-            },
-            {
-                "individuos": 600,
-                "resultado_sequencial": 1.582699966430664,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 2.6927467346191407
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 2.765686821937561
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 2.64225435256958
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 2.6891924858093263
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "geracao": 25,
         "resultado": [
             {
-                "individuos": 50,
-                "resultado_sequencial": 0.046012473106384275,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.16516585350036622
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.17865979671478271
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.19316411018371582
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.22249813079833985
-                    }
-                ]
-            },
-            {
                 "individuos": 100,
-                "resultado_sequencial": 0.15585815906524658,
+                "resultado_sequencial": 0.06075751781463623,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 0.3963316917419434
+                        "processos": 2,
+                        "resultado": 0.49255754947662356
                     },
                     {
-                        "threads": 4,
-                        "resultado": 0.42175564765930174
+                        "processos": 4,
+                        "resultado": 0.4119109630584717
                     },
                     {
-                        "threads": 6,
-                        "resultado": 0.4413740158081055
+                        "processos": 6,
+                        "resultado": 0.9956199884414673
                     },
                     {
-                        "threads": 8,
-                        "resultado": 0.4616308450698853
+                        "processos": 8,
+                        "resultado": 2.26650493144989
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 0.7437976837158203,
+                "resultado_sequencial": 0.3289700746536255,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 1.6090805530548096
+                        "processos": 2,
+                        "resultado": 0.44921858310699464
                     },
                     {
-                        "threads": 4,
-                        "resultado": 1.6900033235549927
+                        "processos": 4,
+                        "resultado": 0.5322316646575928
                     },
                     {
-                        "threads": 6,
-                        "resultado": 1.6863677024841308
+                        "processos": 6,
+                        "resultado": 1.5533416986465454
                     },
                     {
-                        "threads": 8,
-                        "resultado": 1.638267993927002
+                        "processos": 8,
+                        "resultado": 1.6859103441238403
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 3.1598161697387694,
+                "resultado_sequencial": 1.2362626791000366,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 9.364940094947816
+                        "processos": 2,
+                        "resultado": 0.90652494430542
                     },
                     {
-                        "threads": 4,
-                        "resultado": 13.304445004463195
+                        "processos": 4,
+                        "resultado": 0.9812521457672119
                     },
                     {
-                        "threads": 6,
-                        "resultado": 8.5506187915802
+                        "processos": 6,
+                        "resultado": 1.1173775434494018
                     },
                     {
-                        "threads": 8,
-                        "resultado": 9.054284143447877
+                        "processos": 8,
+                        "resultado": 1.062346887588501
                     }
                 ]
             },
             {
-                "individuos": 600,
-                "resultado_sequencial": 7.064948058128357,
+                "individuos": 1000,
+                "resultado_sequencial": 4.786771249771118,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 10.109785747528075
+                        "processos": 2,
+                        "resultado": 2.788246822357178
                     },
                     {
-                        "threads": 4,
-                        "resultado": 12.912245869636536
+                        "processos": 4,
+                        "resultado": 2.3384829998016357
                     },
                     {
-                        "threads": 6,
-                        "resultado": 10.87351381778717
+                        "processos": 6,
+                        "resultado": 2.1575226306915285
                     },
                     {
-                        "threads": 8,
-                        "resultado": 9.308236932754516
+                        "processos": 8,
+                        "resultado": 2.0850042343139648
                     }
                 ]
             }
@@ -348,112 +96,276 @@
         "geracao": 50,
         "resultado": [
             {
-                "individuos": 50,
-                "resultado_sequencial": 0.10750756263732911,
-                "resultado_paralelo": [
-                    {
-                        "threads": 2,
-                        "resultado": 0.4406460762023926
-                    },
-                    {
-                        "threads": 4,
-                        "resultado": 0.49126031398773196
-                    },
-                    {
-                        "threads": 6,
-                        "resultado": 0.5629763841629029
-                    },
-                    {
-                        "threads": 8,
-                        "resultado": 0.7164803266525268
-                    }
-                ]
-            },
-            {
                 "individuos": 100,
-                "resultado_sequencial": 0.5591341972351074,
+                "resultado_sequencial": 0.12087297439575195,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 1.1396533489227294
+                        "processos": 2,
+                        "resultado": 0.7027369737625122
                     },
                     {
-                        "threads": 4,
-                        "resultado": 1.1498305797576904
+                        "processos": 4,
+                        "resultado": 0.790248441696167
                     },
                     {
-                        "threads": 6,
-                        "resultado": 1.2596419334411622
+                        "processos": 6,
+                        "resultado": 1.972519850730896
                     },
                     {
-                        "threads": 8,
-                        "resultado": 1.2585726976394653
+                        "processos": 8,
+                        "resultado": 3.078918123245239
                     }
                 ]
             },
             {
                 "individuos": 250,
-                "resultado_sequencial": 1.9864429235458374,
+                "resultado_sequencial": 0.6555049896240235,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 4.699165678024292
+                        "processos": 2,
+                        "resultado": 0.8306079864501953
                     },
                     {
-                        "threads": 4,
-                        "resultado": 6.907840228080749
+                        "processos": 4,
+                        "resultado": 1.1172057867050171
                     },
                     {
-                        "threads": 6,
-                        "resultado": 4.41692099571228
+                        "processos": 6,
+                        "resultado": 2.670240879058838
                     },
                     {
-                        "threads": 8,
-                        "resultado": 4.591566562652588
+                        "processos": 8,
+                        "resultado": 3.0817210197448732
                     }
                 ]
             },
             {
                 "individuos": 500,
-                "resultado_sequencial": 8.004233932495117,
+                "resultado_sequencial": 2.472062373161316,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 14.56618959903717
+                        "processos": 2,
+                        "resultado": 1.7677010297775269
                     },
                     {
-                        "threads": 4,
-                        "resultado": 16.60293653011322
+                        "processos": 4,
+                        "resultado": 1.8770902395248412
                     },
                     {
-                        "threads": 6,
-                        "resultado": 13.409195756912231
+                        "processos": 6,
+                        "resultado": 2.003017258644104
                     },
                     {
-                        "threads": 8,
-                        "resultado": 13.76748342514038
+                        "processos": 8,
+                        "resultado": 2.0695027112960815
                     }
                 ]
             },
             {
-                "individuos": 600,
-                "resultado_sequencial": 8.027941036224366,
+                "individuos": 1000,
+                "resultado_sequencial": 9.565042543411256,
                 "resultado_paralelo": [
                     {
-                        "threads": 2,
-                        "resultado": 13.275487327575684
+                        "processos": 2,
+                        "resultado": 5.442889761924744
                     },
                     {
-                        "threads": 4,
-                        "resultado": 15.80988438129425
+                        "processos": 4,
+                        "resultado": 4.483424878120422
                     },
                     {
-                        "threads": 6,
-                        "resultado": 18.33979458808899
+                        "processos": 6,
+                        "resultado": 4.446139502525329
                     },
                     {
-                        "threads": 8,
-                        "resultado": 19.773932003974913
+                        "processos": 8,
+                        "resultado": 4.039605116844177
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "geracao": 75,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.18146345615386963,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.9311300992965699
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.101424217224121
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 2.3515871286392214
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.722865033149719
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 0.9786019325256348,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.213222289085388
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.544516634941101
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.6573065280914308
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 4.782053351402283
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 3.707592797279358,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 2.6304760694503786
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 2.805835556983948
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.136671233177185
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 2.9552736282348633
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 14.410845279693604,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 8.128634095191956
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 6.763065195083618
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 6.532465529441834
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 6.079027056694031
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "geracao": 100,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.23988120555877684,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.2501481294631958
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.4533915996551514
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 4.1137560367584225
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 5.062753891944885
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 1.3051926612854003,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.6051071405410766
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 2.0275697469711305
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 4.6468347072601315
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 4.875487351417542
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 4.964046573638916,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 3.5065428256988525
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 3.7100289106369018
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.727935314178467
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.775693941116333
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 19.23108329772949,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 10.869751334190369
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 9.017148280143738
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 8.68356020450592
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 8.0818927526474
                     }
                 ]
             }
