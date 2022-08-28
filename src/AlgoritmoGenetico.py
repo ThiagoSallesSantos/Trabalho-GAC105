@@ -3,7 +3,6 @@ from typing import List, Tuple, Dict
 import random
 import math
 import time
-from unittest import result
 
 ## Typagem
 individuo = List[str]
@@ -102,10 +101,12 @@ class AlgoritmoGenetico:
         lista_individuos[posicao_individuo] = aux_individuo if self._verifica_valor(aux_individuo) else lista_individuos[posicao_individuo]
         return lista_individuos
 
-    def _cria_filho(self, lista_individuos : List[individuo_processado], processo_paralelo : bool = False, retorno_processo : Dict[int, List[individuo]] = None, index : int = None) -> Tuple[individuo, individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
-        escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
-        escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
-        resultado = self._crossover(escolha_1, escolha_2) ## Realiza o crossover
+    def _cria_filho(self, lista_individuos : List[individuo_processado], qtd_filhos : int, processo_paralelo : bool = False, retorno_processo : Dict[int, List[individuo]] = None, index : int = None) -> List[individuo]: ## Gera os filhos, realizando os rodeios e o crossover, para criação dos filhos dos individuos selecionados
+        resultado = []
+        for filhos in range(math.ceil(qtd_filhos/2)): ## Cria os filhos
+            escolha_1 = self._rodeio(lista_individuos) ## Escolhe um individuo
+            escolha_2 = self._rodeio(lista_individuos) ## Escolhe um individuo
+            resultado += self._crossover(escolha_1, escolha_2) ## Realiza o crossover
         if processo_paralelo: ## Verifica se trata de um processo paralelo
             retorno_processo[index] = resultado ## Retorno para caso a chamada seja via processo em paralelo
         return resultado
@@ -123,9 +124,7 @@ class AlgoritmoGenetico:
         lista_individuos = [self._cria_individuo for individuo in range(self._qtd_individuos)] ## Lista de individuos da população
         for geracao in range(self._qtd_geracoes): ## Percorre as gerações
             lista_individuos = self._processa_individuo(lista_individuos) ## Realiza o processamento dos individuos da geração
-            novos_individuos = [] ## Armazerna os novos individuos
-            while len(novos_individuos) < self._qtd_individuos: ## Gera os x filhos
-                novos_individuos += self._cria_filho(lista_individuos) ## Cria 2 filhos
+            novos_individuos = self._cria_filho(lista_individuos, self._qtd_individuos)[:self._qtd_individuos] ## Cria os filhos
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time() ## Pega o tempo final
         return lista_individuos, fim - inicio
@@ -161,18 +160,17 @@ class AlgoritmoGeneticoParalelo(AlgoritmoGenetico):
         ############################## - Fim
         for geracao in range(self._qtd_geracoes): ## Percorre as gerações
             lista_individuos = self._processa_individuo(lista_individuos) ## Realiza o processamento dos individuos da geração
-            novos_individuos = [] ## Armazerna os novos individuos
-            while len(novos_individuos) < self._qtd_individuos: ## Gera os x filhos
-                ## Realiza a criação dos filhos, utilizando de processos para execução paralela, cada processo irá cria dois filhos
-                ## Criação de processos - Inicio
-                for index_processo in range(self._qtd_processos): ## Cria os processos e os executa
-                    lista_processos[index_processo] = Process(target=self._cria_filho, args=(lista_individuos, True, retorno_processos, index_processo))
-                    lista_processos[index_processo].start()
-                for index_processo in range(self._qtd_processos): ## Espera os processos terminarem a execução, e obtém os resultados
-                    lista_processos[index_processo].join()
-                    novos_individuos += retorno_processos[index_processo]
-                    lista_processos[index_processo].close()
-                ############################## - Fim 
+            ## Seção de criação de processos para programação paralela - Inicio
+            ## Objetivo da seção: Criação dos filhos
+            novos_individuos = [] ## Armazena os novos individuos
+            for index_processo in range(self._qtd_processos): ## For para criação e execução dos processos
+                lista_processos[index_processo] = Process(target=self._cria_filho, args=(lista_individuos, self._qtd_individuos//self._qtd_processos, True, retorno_processos, index_processo))
+                lista_processos[index_processo].start()
+            for index_processo in range(self._qtd_processos): ## For para a espera dos processos e obtenção dos resultados
+                lista_processos[index_processo].join()
+                novos_individuos += retorno_processos[index_processo]
+                lista_processos[index_processo].close() ## Fecha o processo criado
+            ############################## - Fim
             lista_individuos = self._mutacao(novos_individuos) ## Realiza  amutação em um dos filhos
         fim = time.time() ## Pega o tempo final
         return lista_individuos, fim - inicio
