@@ -4,16 +4,16 @@
  Trabalho prático da matéria GAC105 (Programação Paralela e Concorrente) da Universidade Federal de Lavras.
 
 ## Sumário
-1. [Autores](#Autores)  
-2. [Objetivo](#Objetivo)
-3. [Estrutura do Projeto](#Estrutura_do_Projeto)
-4. [Requisitos](#Requisitos)
-5. [Preparação do Ambiente](#Preparação_do_Ambiente)
-6. [Execução](#Execução)
+1. [Autores](#autores)  
+2. [Objetivo](#objetivo)
+3. [Estrutura do Projeto](#estrutura-do-projeto)
+4. [Requisitos](#requisitos)
+5. [Preparação do Ambiente](#preparação-do-ambiente)
+6. [Execução](#execução)
 
-    6.1. [Executar o arquivo main.py](#Executar_o_arquivo_main.py)
+    6.1. [Executar o arquivo main.py](#executar-o-arquivo-srcmainpy)
 
-    6.2. [Executar o arquivo AnaliseDesempenho.ipynb](#Executar_o_arquivo_AnaliseDesempenho.ipynb)
+    6.2. [Executar o arquivo AnaliseDesempenho.ipynb](#executar-o-arquivo-srcanalisedesempenhoipynb)
 
 ## Autores
 
@@ -62,8 +62,16 @@ python3 -m venv venv
 
 Iniciar o ambiente virtual em python
 
+Linux:
+
 ~~~bash  
 source venv/bin/activate
+~~~
+
+Windows: 
+
+~~~bash  
+venv/Scripts/activate
 ~~~
 
 Fazer a instalação das dependências
@@ -98,4 +106,4 @@ jupyter notebook
 
 Ou usar uma extensão/aplicação que der suporte, ao uso de notebook em python.
 
-Posteriormente, com a aplicação de suporte ao notebook de sua prefência, basta selecionar o arquivo src/AnaliseDesempenho.ipynb, e executar as cédulas.
+Posteriormente, com a aplicação de suporte ao notebook de sua prefência, basta selecionar o arquivo _src/AnaliseDesempenho.ipynb_, e executar as cédulas.
