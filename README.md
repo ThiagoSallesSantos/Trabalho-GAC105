@@ -11,9 +11,9 @@
 5. [Preparação do Ambiente](#preparação-do-ambiente)
 6. [Execução](#execução)
 
-    6.1. [Executar o arquivo main.py](#executar-o-arquivo-srcmainpy)
+    6.1. [Executar o arquivo src/main.py](#executar-o-arquivo-srcmainpy)
 
-    6.2. [Executar o arquivo AnaliseDesempenho.ipynb](#executar-o-arquivo-srcanalisedesempenhoipynb)
+    6.2. [Executar o arquivo src/AnaliseDesempenho.ipynb](#executar-o-arquivo-srcanalisedesempenhoipynb)
 
 ## Autores
 
