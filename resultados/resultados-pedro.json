@@ -1,0 +1,374 @@
+[
+    {
+        "geracao": 25,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.06075751781463623,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.49255754947662356
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 0.4119109630584717
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 0.9956199884414673
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 2.26650493144989
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 0.3289700746536255,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.44921858310699464
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 0.5322316646575928
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 1.5533416986465454
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 1.6859103441238403
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 1.2362626791000366,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.90652494430542
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 0.9812521457672119
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 1.1173775434494018
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 1.062346887588501
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 4.786771249771118,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 2.788246822357178
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 2.3384829998016357
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 2.1575226306915285
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 2.0850042343139648
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "geracao": 50,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.12087297439575195,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.7027369737625122
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 0.790248441696167
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 1.972519850730896
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.078918123245239
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 0.6555049896240235,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.8306079864501953
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.1172057867050171
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 2.670240879058838
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.0817210197448732
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 2.472062373161316,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.7677010297775269
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.8770902395248412
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 2.003017258644104
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 2.0695027112960815
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 9.565042543411256,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 5.442889761924744
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 4.483424878120422
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 4.446139502525329
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 4.039605116844177
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "geracao": 75,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.18146345615386963,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 0.9311300992965699
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.101424217224121
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 2.3515871286392214
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.722865033149719
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 0.9786019325256348,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.213222289085388
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.544516634941101
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.6573065280914308
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 4.782053351402283
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 3.707592797279358,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 2.6304760694503786
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 2.805835556983948
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.136671233177185
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 2.9552736282348633
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 14.410845279693604,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 8.128634095191956
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 6.763065195083618
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 6.532465529441834
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 6.079027056694031
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "geracao": 100,
+        "resultado": [
+            {
+                "individuos": 100,
+                "resultado_sequencial": 0.23988120555877684,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.2501481294631958
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 1.4533915996551514
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 4.1137560367584225
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 5.062753891944885
+                    }
+                ]
+            },
+            {
+                "individuos": 250,
+                "resultado_sequencial": 1.3051926612854003,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 1.6051071405410766
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 2.0275697469711305
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 4.6468347072601315
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 4.875487351417542
+                    }
+                ]
+            },
+            {
+                "individuos": 500,
+                "resultado_sequencial": 4.964046573638916,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 3.5065428256988525
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 3.7100289106369018
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 3.727935314178467
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 3.775693941116333
+                    }
+                ]
+            },
+            {
+                "individuos": 1000,
+                "resultado_sequencial": 19.23108329772949,
+                "resultado_paralelo": [
+                    {
+                        "processos": 2,
+                        "resultado": 10.869751334190369
+                    },
+                    {
+                        "processos": 4,
+                        "resultado": 9.017148280143738
+                    },
+                    {
+                        "processos": 6,
+                        "resultado": 8.68356020450592
+                    },
+                    {
+                        "processos": 8,
+                        "resultado": 8.0818927526474
+                    }
+                ]
+            }
+        ]
+    }
+]
